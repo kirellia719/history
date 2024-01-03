@@ -1,0 +1,1 @@
+export default ({style}) => <div className="Waiting" style={style}>&nbsp;</div>;

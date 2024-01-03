@@ -1,0 +1,102 @@
+.Mastery {
+    width: 560px;
+    padding: 20px 0;
+    z-index: 3;
+
+    .M-Row{
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .Champion-Mastery {
+        display: block;
+
+        &.first {
+            width: 100px;
+        }
+
+        &.second {
+            width: 85px;
+            margin-top: 20px;
+        }
+
+        .Frame {
+            z-index: 4;
+            border: 3px solid #a47d2f;
+            width: 100%;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow:hidden;
+            img {
+                width: 110%;
+                aspect-ratio: 1/1;
+                object-fit: cover;
+                border-radius: 50%;
+            }
+
+        }
+
+        .Mastery {
+            width: 100%;
+            aspect-ratio: 2/1;
+
+            .m-color {
+                transform: translateY(calc(-50% - 10px)) translateX(-50%);
+                width: 90%;
+                left: 50%;
+            }
+
+            .m-score {
+                transform: translateY(calc(-50%)) translateX(-50%);
+                width: 75%;
+                left: 50%;
+            }
+
+            img {
+                position: absolute;
+                width: 100%;
+            }
+        }
+
+        .Score {
+            text-align: center;
+        }
+    }
+
+    hr {
+        position: absolute;
+        top: 50%;
+        width: 80%;
+        height: 2px;
+        background-color: #a47d2f;
+        border: none;
+    }
+
+    .Score-List{
+        margin-top: 10px;
+        .Score{
+            text-align: center;
+
+            &.first {
+                width: 100px;
+            }
+
+            &.second {
+                width: 85px;
+            }
+
+            .Champion-Name{
+                font-weight: 700;
+                margin-bottom: 5px;
+            }
+            .Champion-Score{
+                font-size: 13px;
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+}
