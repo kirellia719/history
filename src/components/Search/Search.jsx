@@ -36,7 +36,7 @@ const Search = () => {
                     <input
                         type="text"
                         value={name}
-                        placeholder="Nhập tên #tag"
+                        placeholder="Nhập tên game #tag"
                         onChange={e => setName(e.target.value)}
                     />
                     <div className="Submit">

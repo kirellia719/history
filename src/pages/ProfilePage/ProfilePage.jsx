@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import "./ProfilePage.scss";
 import { useParams } from "react-router-dom";
 import { toastError } from "../../common/common";
-import api from "../../var";
 import RankInfo from "../../components/RankInfo/RankInfo";
 import Mastery from "../../components/Mastery/Mastery";
 import History from "../../components/History/History";
@@ -17,7 +16,7 @@ const ProfilePage = () => {
     const info = useSelector(state => state.Reducer.info);
     
     useEffect(() => {
-        if (!info) {
+        if (!info || info.name !== riotID) {
             const fetchInfo = async () => {
                 try {
                     await dispatch(FindAction(riotID));

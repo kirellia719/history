@@ -1,4 +1,3 @@
-import { toastError } from "../common/common";
 import api from "../var";
 
 const Reset = "Reset";
@@ -11,7 +10,7 @@ const initialState = {
     info: null,
     mastery: [{}, {}, {}],
     rank: null,
-    histories: null
+    histories: []
 }
 
 const Reducer = (state = initialState, action) => {
@@ -23,7 +22,7 @@ const Reducer = (state = initialState, action) => {
         case LoadRank:
             return { ...state, rank: action.payload };
         case LoadHistories:
-            return { ...state, histories: action.payload };
+            return { ...state, histories: [...state.histories, ...action.payload] };
         case Reset:
             return initialState;
         default:
@@ -48,8 +47,8 @@ export const LoadRankAction = (summonerId) => async (dispatch) => {
     const {data} = await api.get(`/profile/rank/${summonerId}`);
     data && dispatch({type: LoadRank, payload: data})
 }
-export const LoadHistoriesAction = (puuid) => async (dispatch) => {
-    const {data} = await api.get(`/profile/histories/${puuid}`);
+export const LoadHistoriesAction = (puuid, start = 0, count = 5) => async (dispatch) => {
+    const {data} = await api.get(`/profile/histories/${puuid}?start=${start}`);
     data && dispatch({type: LoadHistories, payload: data})
 }
 

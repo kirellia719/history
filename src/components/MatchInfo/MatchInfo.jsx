@@ -11,7 +11,6 @@ const Player = ({ right, data = {}, onClose }) => {
     const find = (riotID) => {
         onClose && onClose();
         navigate(riotID);
-
     }
     return (<div className={`Player ${right ? `Right` : ''}`}>
         <div className={`Spells ${right ? `Right` : ''}`}>
@@ -151,7 +150,7 @@ const MatchInfo = ({ id, onClose }) => {
                     {data?.players.map((row, index) => <div key={index} className="Row-Player">
                         <Player onClose={onClose} data={row[0]} />
                         <div className="Lane-Icon">
-                            <img src={`/public/lane/${index + 1}.png`} alt="" />
+                            <img src={`${process.env.REACT_APP_BE_URL}/public/lane/${index + 1}.png`} alt="" />
                         </div>
                         <Player onClose={onClose} data={row[1]} right />
                     </div>

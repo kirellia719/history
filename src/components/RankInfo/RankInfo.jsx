@@ -28,7 +28,7 @@ const RankInfo = () => {
         <div className="Rank">
             {
                 rank ?
-                rank.length == 0
+                rank.length === 0
                     ? <div className="No-Rank">Chưa có hạng</div>
                     : <>
                         <div className="Rank-Info">
@@ -57,7 +57,7 @@ const RankInfo = () => {
                         <div className="Rank-Icon">
                             <img
                                 className="rank-icon"
-                                src={`/rank-icon/Rank=${rank[index]?.img}.png`} alt=""
+                                src={`${process.env.REACT_APP_BE_URL}/public/rank-icon/Rank=${rank[index]?.img}.png`} alt=""
                             />
                         </div>
                     </>

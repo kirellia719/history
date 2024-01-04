@@ -34,12 +34,12 @@ const Mastery = () => {
                         <div className="Mastery">
                             <img
                                 className="m-color"
-                                src={`/public/tt7.png`}
+                                src={`${process.env.REACT_APP_BE_URL}/public/tt7.png`}
                                 alt=""
                             />
                             <img
                                 className="m-score"
-                                src={`/public/mastery/${m.level}.png`}
+                                src={`${process.env.REACT_APP_BE_URL}/public/mastery/${m.level}.png`}
                                 alt=""
                             />
                         </div>
